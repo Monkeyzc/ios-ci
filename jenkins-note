@@ -1,0 +1,10 @@
+
+# 安装
+ brew install jenkins
+
+# jenkins首次启动卡在启动界面
+1.需要你进入jenkins的工作目录，打开hudson.model.UpdateCenter.xml
+2.把http://updates.jenkins-ci.org/update-center.json改成http://mirror.xmission.com/jenkins/updates/update-center.json
+
+# 启动jenkins
+ jenkins --httpPort=8080
