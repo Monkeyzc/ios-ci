@@ -14,7 +14,7 @@ filePath = '../app-test.ipa'
 console.log(`filePath: ${filePath}`)
 
 var emails = argv.emails || ''
-emails = emails.length > 0 ? `${emails}, zhaofei@wusongtech.com` : 'zhaofei@wusongtech.com'
+emails = emails.length > 0 ? `${emails}, defaultEmail` : 'email'
 console.log(`emails: ${emails}`)
 
 
@@ -87,7 +87,7 @@ fs.exists(filePath, function (exists) {
                 @13051149394
                 `
             }
-        var atMobiles = ['13051149394']
+        var atMobiles = []
         sendDingTalkMessage(markdown, atMobiles)
     })
 })
@@ -104,14 +104,14 @@ var sendEmail = function (emails, subject, html) {
             port: 465,
             secure: false, // true for 465, false for other ports
             auth: {
-                user: 'zhaofeizlj@163.com', // generated ethereal user
-                pass: 'zhaofeifsp123456' // generated ethereal password
+                user: 'your email address', // generated ethereal user
+                pass: 'email smtp password' // generated ethereal password
             }
         });
 
         // setup email data with unicode symbols
         let mailOptions = {
-            from: '"Test 👻" <zhaofeizlj@163.com>', // sender address
+            from: '"Test 👻" <your email>', // sender address
             to: emails, // list of receivers
             subject: subject, // Subject line
             text: 'Hello world?', // plain text body
